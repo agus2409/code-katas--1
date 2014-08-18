@@ -14,23 +14,32 @@
   (if (contains? m k) (= (get m k) nil) false)
   )
 
-(defn range
+(defn implement-range
   "Escribir una funcion que cree una lista de enteros en un rango dado.
    Restricciones: range"
-  [start end]
-  )
+  [start end] 
+  (def lista (conj '() start))
+  (def aux start)
+  (def loops (- end start))
+  (while(eval (not ( == loops (count lista))))(def aux (inc aux)) (def lista (conj lista aux)) )
+  (reverse lista)
+)
 
 (defn compress-sequence
   "Escribir una funcion que elimine los duplicados consecutivos
    de una secuencia"
   [s]
+  (dotimes [n (count s)]  
+    (get s n)
   )
+)
 
 (defn max-value
   "Escribir una funcion que reciba un numero variable de parametros
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
-  [& args])
+  [& args]
+)
 
 (defn split-two
   "Escribir una funcion que parta una secuencia en dos partes
@@ -49,6 +58,7 @@
   "Escribir una funcion que reciba un string y devuelva un nuevo string conteniendo
    solamente las mayusculas."
   [text]
+  
   )
 
 (defn find-truth
@@ -64,5 +74,4 @@
    Restricciones: zipmap"
   [k v]
   )
-
-(nil-key :b {:a nil :b 2})
+(compress-sequence "aloooo")
