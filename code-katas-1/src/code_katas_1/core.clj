@@ -25,13 +25,18 @@
   (reverse lista)
 )
 
+
 (defn compress-sequence
   "Escribir una funcion que elimine los duplicados consecutivos
    de una secuencia"
   [s]
-  (dotimes [n (count s)]  
-    (get s n)
-  )
+ (def lista '())
+ (dotimes [n (count s)]  
+   (println s)
+   (println lista)
+   (if (not=  (first lista) (get s n)) (def lista (conj lista (get s n))))
+ )
+ (reverse lista)
 )
 
 (defn max-value
@@ -74,4 +79,5 @@
    Restricciones: zipmap"
   [k v]
   )
-(compress-sequence "aloooo")
+
+(compress-sequence [[1 2] [1 2] [3 4] [1 2]])
