@@ -32,10 +32,9 @@
   [s]
  (def lista '())
  (dotimes [n (count s)]  
-   (println s)
-   (println lista)
    (if (not=  (first lista) (get s n)) (def lista (conj lista (get s n))))
  )
+ (println (reverse lista))
  (reverse lista)
 )
 
@@ -80,4 +79,4 @@
   [k v]
   )
 
-(compress-sequence [[1 2] [1 2] [3 4] [1 2]])
+(compress-sequence "hoooolaaaaaa")
