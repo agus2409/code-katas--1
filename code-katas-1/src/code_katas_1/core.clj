@@ -42,6 +42,7 @@
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
   [& args]
+  (first (sort >(seq args)))
 )
 
 (defn split-two
@@ -56,13 +57,14 @@
    luego el segundo de cada una, luego el tercero, etc.
    Restricciones: interleave"
   [s1 s2]
+  
   )
 
 (defn retrieve-caps
   "Escribir una funcion que reciba un string y devuelva un nuevo string conteniendo
    solamente las mayusculas."
   [text]
-  
+  (filter #(Character/isUpperCase %) text)
   )
 
 (defn find-truth
@@ -70,7 +72,7 @@
    solamente si alguno de los parametros son true, pero no todos son true. En otro
    caso debera retornar false"
   [& xs]
-  (if (some false? xs) (if(some true? xs) true false) false)
+(if (some false? xs) (if(some true? xs) true false) false)
   )
 
 (defn zip-map
@@ -79,3 +81,5 @@
    Restricciones: zipmap"
   [k v]
   )
+
+(retrieve-caps "HoLa")
