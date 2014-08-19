@@ -34,7 +34,6 @@
  (dotimes [n (count s)]  
    (if (not=  (first lista) (get s n)) (def lista (conj lista (get s n))))
  )
- (println (reverse lista))
  (reverse lista)
 )
 
@@ -49,6 +48,7 @@
   "Escribir una funcion que parta una secuencia en dos partes
    Restricciones: split-at"
   [length s]
+  [(take length s) (drop length s)]
   )
 
 (defn inter-two
@@ -70,6 +70,7 @@
    solamente si alguno de los parametros son true, pero no todos son true. En otro
    caso debera retornar false"
   [& xs]
+  (if (some false? xs) (if(some true? xs) true false) false)
   )
 
 (defn zip-map
@@ -78,5 +79,3 @@
    Restricciones: zipmap"
   [k v]
   )
-
-(compress-sequence "hoooolaaaaaa")
