@@ -31,7 +31,7 @@
    de una secuencia"
   [s]
  (def lista '())
- (dotimes [n (count s)]  
+ (dotimes [n (count s)] 
    (if (not=  (first lista) (get s n)) (def lista (conj lista (get s n))))
  )
  (reverse lista)
@@ -64,7 +64,7 @@
   "Escribir una funcion que reciba un string y devuelva un nuevo string conteniendo
    solamente las mayusculas."
   [text]
-  (filter #(Character/isUpperCase %) text)
+  (apply str (filter #(Character/isUpperCase %) text))
   )
 
 (defn find-truth
@@ -82,4 +82,3 @@
   [k v]
   )
 
-(retrieve-caps "HoLa")
